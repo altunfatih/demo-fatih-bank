@@ -13,13 +13,13 @@ import com.fatih.bank.db.model.Employee;
 
 @Component
 public class EmployeeDao {
-	
+
 	@Autowired
 	private ModelMapper modelMapper;
 
 	private List<Employee> db = new ArrayList<Employee>();
 
-	public List<Employee>  findAll() {
+	public List<Employee> findAll() {
 		return db;
 	}
 
@@ -41,10 +41,10 @@ public class EmployeeDao {
 				return Optional.of(employee);
 			}
 		}
-		
+
 		return Optional.empty();
 	}
-	
+
 	public boolean existsById(Long id) {
 		Optional<Employee> opt = findById(id);
 		return opt.isPresent();
@@ -58,22 +58,22 @@ public class EmployeeDao {
 			}
 		}
 	}
-	
+
 	private void add(Employee employee) {
-		
+
 		OptionalLong maxOption = db.stream().mapToLong(e -> e.getId()).max();
 		long id;
-		
+
 		if (maxOption.isEmpty()) {
 			id = 1;
 		} else {
 			id = maxOption.getAsLong() + 1;
 		}
 		employee.setId(id);
-		
+
 		db.add(employee);
 	}
-	
+
 	private void update(Employee employeeEntity) {
 		for (Employee employee : db) {
 			if (employee.getId().equals(employeeEntity.getId())) {
@@ -81,6 +81,14 @@ public class EmployeeDao {
 				break;
 			}
 		}
+	}
+
+	public Employee findByEmail(String email) {
+		for (Employee e : db) {
+			if (e.getEmail().equals(email))
+				return e;
+		}
+		return null;
 	}
 
 }
