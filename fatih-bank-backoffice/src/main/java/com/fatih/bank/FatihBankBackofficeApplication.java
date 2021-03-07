@@ -1,4 +1,4 @@
-package com.fatih.bank.backoffice;
+package com.fatih.bank;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
