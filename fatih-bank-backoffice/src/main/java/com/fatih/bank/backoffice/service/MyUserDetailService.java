@@ -1,4 +1,4 @@
-package com.fatih.bank.service;
+package com.fatih.bank.backoffice.service;
 
 import java.util.Arrays;
 

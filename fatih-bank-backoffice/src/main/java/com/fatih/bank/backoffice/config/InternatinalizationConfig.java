@@ -1,4 +1,4 @@
-package com.fatih.bank.config;
+package com.fatih.bank.backoffice.config;
 
 import java.util.Locale;
 

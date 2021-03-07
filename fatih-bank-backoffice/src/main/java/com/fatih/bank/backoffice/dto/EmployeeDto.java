@@ -1,4 +1,4 @@
-package com.fatih.bank.db.dto;
+package com.fatih.bank.backoffice.dto;
 
 import com.fatih.bank.db.model.Employee;
 

@@ -1,4 +1,4 @@
-package com.fatih.bank.config;
+package com.fatih.bank.backoffice.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.fatih.bank.service.MyUserDetailService;
+import com.fatih.bank.backoffice.service.MyUserDetailService;
 
 @Configuration
 @EnableWebSecurity
