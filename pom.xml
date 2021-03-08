@@ -48,5 +48,6 @@
 	<modules>
 		<module>fatih-bank-db</module>
 		<module>fatih-bank-backoffice</module>
+		<module>fatih-bank-api</module>
 	</modules>
 </project>
