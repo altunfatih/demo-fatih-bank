@@ -20,45 +20,41 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class Account {
 
-	public Account(Long accountId) {
-		this.id = id;
-	}
+    public Account(Long id) {
+        this.id = id;
+    }
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-
-	@ManyToOne
-	private Customer customer;
-
-	/*--
-	@OneToMany(mappedBy = "account")
-	private Set<TransactionLog> transactions;
-	*/
-
-	@Column(nullable = false)
-	private String accountNumber;
-
-	@Column(nullable = false)
-	private String accountName;
-
-	private String description;
-
-	@Column(nullable = false)
-	private BigDecimal balance;
-
-	@Enumerated(EnumType.STRING)
-	@Column(nullable = false)
-	private AccountCurrency currency;
-
-	@Enumerated(EnumType.STRING)
-	@Column(nullable = false)
-	private AccountStatusType status;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    
+    @ManyToOne
+    private Customer customer;
+    
+    /*--
+    @OneToMany(mappedBy = "account")
+    private Set<TransactionLog> transactions;
+    */
+    
+    @Column(nullable = false, unique = true)
+    private String accountNumber;
+    
+    @Column(nullable = false)
+    private String accountName;
+    
+    private String description;
+    
+    @Column(nullable = false)
+    private BigDecimal balance;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private AccountCurrency currency;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private AccountStatusType status;
 }

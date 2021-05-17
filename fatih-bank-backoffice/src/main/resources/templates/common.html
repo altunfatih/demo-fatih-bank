@@ -86,16 +86,7 @@
 							href="/employee/add" th:text="#{employee.create}"></a>
 					</nav>
 				</div>
-				<a class="nav-link collapsed" href="#" data-toggle="collapse"
-					data-target="#collapseCustomer" aria-expanded="false"
-					aria-controls="collapseCustomer">
-					<div class="sb-nav-link-icon">
-						<i class="fas fa-book-open"></i>
-					</div> <span th:text="#{customer}"></span>
-					<div class="sb-sidenav-collapse-arrow">
-						<i class="fas fa-angle-down"></i>
-					</div>
-				</a>
+				
 				<div class="collapse" id="collapseCustomer"
 					aria-labelledby="headingOne" data-parent="#sidenavAccordion">
 					<nav class="sb-sidenav-menu-nested nav">
@@ -107,7 +98,6 @@
 
 					</nav>
 				</div>
-
 
 				<div class="sb-sidenav-menu-heading"></div>
 				<a class="nav-link" th:href="@{/logout}">

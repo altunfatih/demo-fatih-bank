@@ -11,9 +11,6 @@ import org.springframework.stereotype.Repository;
 import com.fatih.bank.db.dao.AccountDao;
 import com.fatih.bank.db.model.Account;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @Transactional
 @Repository
 public class AccountDaoImpl implements AccountDao {
@@ -28,6 +25,7 @@ public class AccountDaoImpl implements AccountDao {
             .setParameter(1, customerId)
             .getResultList().size();
     }
+   
 
     @Override
     public void save(Account entity) {
@@ -43,5 +41,14 @@ public class AccountDaoImpl implements AccountDao {
     public Optional<Account> findById(Long accountId) {
         Account dbAccount = entityManager.find(Account.class, accountId);
         return Optional.ofNullable(dbAccount);
+    }
+
+
+    @Override
+    public Account findByAccountNumber(String toAccountNumber) {
+        return (Account) entityManager
+            .createQuery("from Account as acc where acc.accountNumber = ?1")
+            .setParameter(1, toAccountNumber)
+            .getSingleResult();
     }
 }
