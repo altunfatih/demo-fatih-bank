@@ -40,7 +40,6 @@
 											<th th:text="#{employee.status}"></th>
 											<th th:text="#{employee.role}"></th>
 											<th th:text="#{employee.update}"></th>
-											<th th:text="#{employee.delete}"></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -58,10 +57,7 @@
 												<td th:text="${e.role}"></td>
 												<td><a th:href="'/employee/update/' + ${e.id}"
 													th:text="#{employee.update}"></a></td>
-												<td><a id="deleteLink" href="#"
-													data-toggle="modal" data-target="#deleteModal"
-													th:text="#{employee.delete}" th:onClick="del([[${e.id}]])"></a></td>
-											</tr>
+																							</tr>
 										</div>
 									</tbody>
 								</table>
